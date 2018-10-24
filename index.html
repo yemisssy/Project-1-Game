@@ -2,12 +2,81 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="Scripts/main.js" defer charset="utf-8"></script>
+    <title>gamePage</title>
   </head>
-  <body id="landingBody">
-    <h1 id="landingHead"><span id="s1">W</span>elcome To <br> <span id="s2">W</span>ho <span id="s3">W</span>here <span id="s4">W</span>hat</h1>
-
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer charset="utf-8"></script>
+  <body id="gameBody">
+    <div id="gamePageHead">
+      <h1>WhoWhereWhat</h1>
+    </div>
+    <div class="" id="modal" onload="showModal()">
+      <p>Please Enter your name</p>
+      <input type="text" name="playersName" value=" " id="namePut"><br>
+      <button type="submit" name="button" id="submit">Start Game</button>
+    </div>
+    <div id="mainbody">
+      <div class="mainChild" id="categories">
+        <h3>Categories</h3>
+        <ul>
+          <li class="lists" id="landmark">Landmarks and cities</li>
+          <li class="lists" id="famous">Famous People</li>
+          <li class="lists" id="quotes">Quotes</li>
+        </ul>
+      </div>
+      <div class="mainChild" id="deckDisplay">
+        <div id="imagesBoard">
+          <img src="images/pointing.gif" alt="pointing Finger">
+          <p >Please select a category</p>
+          <div id="imageHolder">
+            <div class="images setA">image1</div>
+            <div class="images setA">image2</div>
+            <div class="images setB">image3</div>
+            <div class="images setB">image4</div>
+          </div>
+          <div id="actualImages">
+              <div id="subDiv" class="oneAndthree">
+                <div><img class="images1 set1" src="" alt="cities" id="img1"></div>
+              </div>
+              <div id="subDiv" class="twoAndfour">
+                <div><img class="images1 set1" src="" alt="cities" id="img2"></div>
+              </div>
+              <div id="subDiv1" class="oneAndthree">
+                <div><img class="images1 set1" src="" alt="cities" id="img3"></div>
+              </div>
+              <div id="subDiv1"  class="twoAndfour">
+                <div><img class="images1 set1" src="" alt="cities" id="img4"></div>
+              </div>
+          </div>
+        </div>
+        <p>Question: <br> Give me designated questions</p>
+        <div id="optionsBoard">
+          <div class="options">
+            <input type="button" name="optionA" value="Random Answer" class="leftHand" id="a">
+            <input type="button" name="optionA" value="Random Answer" class="leftHand" id="b">
+          </div>
+          <!-- The hint will be a button with target self and on click of it, the innerHTML WILL CHANGE TO HINT -->
+          <button type="button" name="hint" id="hint">Hint</button>
+          <div class="options">
+            <input type="button" name="optionA" value="Random Answer" class="rightHand" id="c">
+            <input type="button" name="optionA" value="Random Answer" class="rightHand" id="d">
+          </div>
+        </div>
+      </div>
+      <div class="mainChild" id="scoreBoard">
+        <h3>ScoreBoard</h3>
+        <div id="boardContent">
+          <h2 id="thePlayer">Players name</h2>
+          <hr>
+          <h1>Points</h1>
+          <button type="button" name="button" id="scoreCounter">0</button>
+          <h2>Your stats</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
