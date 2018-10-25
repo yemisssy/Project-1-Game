@@ -56,13 +56,48 @@ function displayPlayer(){
 //Function Add Each image to the images1 divs
 function addImage(){
   let images1 =document.getElementsByClassName('images1');
-  let i=gameTool.images.length-1;
+  let i=gameTool.images.length-1; //Note to self this returns the value at the last index, index 11, item 12
   for(let j=0; j<images1.length; j+=1){
     images1[j].src=gameTool.images[i];
     i-=1;
   }
 }
 addImage();
+// displaye question
+function ask(){
+  let taker=document.getElementById('questionTaker');
+  taker.textContent=gameTool.question;
+}
+//Function get random wrong answers; call this function inside the animate function;
+function wrongAns(){
+  ask();
+  let wrong =Object.values(gameTool.wrongOption);//Returns an array of wrong Questions
+  let target = document.getElementsByClassName('option');
+  let i = wrong.length;
+  let wrongQPos;
+  let save = []
+  while(i > 0){
+    wrongQPos = wrong[Math.floor(Math.random()*i)];
+    console.log(`im wrongpos ${wrongQPos}`);
+    save.push(wrongQPos);
+    console.log(save);
+    if(save.length === 3){
+      let j = target.length;
+      while(j > 0) {
+        let theTarget = target[Math.floor(Math.random()*j)];
+        theTarget.value = save[j];
+        // save.length -= 1;
+        console.log(`i am the current save ${save.length}`);
+        console.log(`i am the current ${theTarget.value}`);
+          j -= 1;
+      }
+
+    }
+    i -= 1;
+  }
+}
+wrongAns();
+
 
 //function animate deckImg
 
