@@ -19,20 +19,20 @@
       <div class="mainChild" id="categories">
         <h3>Categories</h3>
         <ul>
-          <li class="lists" id="landmark">Landmarks and cities</li>
+          <li class="lists" id="landmark"><a href="#">Landmarks and cities</a></li>
           <li class="lists" id="famous">Famous People</li>
           <li class="lists" id="quotes">Quotes</li>
         </ul>
       </div>
       <div class="mainChild" id="deckDisplay">
         <div id="imagesBoard">
-          <img src="images/pointing.gif" alt="pointing Finger">
-          <p >Please select a category</p>
+          <img src="images/pointing.gif" alt="pointing Finger" id="finger">
+          <p id="par">Please select a category</p>
           <div id="imageHolder">
-            <div class="images setA">image1</div>
-            <div class="images setA">image2</div>
-            <div class="images setB">image3</div>
-            <div class="images setB">image4</div>
+            <button class="images setA">image1</button>
+            <button class="images setA">image2</button>
+            <button class="images setB">image3</button>
+            <button class="images setB">image4</button>
           </div>
           <div id="actualImages">
               <div id="subDiv" class="oneAndthree">
@@ -49,7 +49,8 @@
               </div>
           </div>
         </div>
-        <p>Question: <br> Give me designated questions</p>
+        <p>Question</p>
+        <p>Give me designated questions</p>
         <div id="optionsBoard">
           <div class="options">
             <input type="button" name="optionA" value="Random Answer" class="leftHand" id="a">
@@ -68,7 +69,7 @@
         <div id="boardContent">
           <h2 id="thePlayer">Players name</h2>
           <hr>
-          <h1>Points</h1>
+          <h1>Score</h1>
           <button type="button" name="button" id="scoreCounter">0</button>
           <h2>Your stats</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor

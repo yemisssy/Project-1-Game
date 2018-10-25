@@ -87,69 +87,71 @@
   }
 }
 #imageHolder{
-  border: solid green;
+  /* border: solid blue; */
   width: 500px;
   height: 400px;
   display: flex;
   flex-wrap: wrap;
-  position: absolute;
-  top:30%;
-  left:32%;
-  /* display: none; */
+  position: relative;
+  bottom: 60%;
+  left:45px;
+  visibility: hidden;
 }
-.images{
-  background: url("images/backOfcard.jpg");
+ .images{
+  border:solid blue;
+   background: url("images/backOfcard.jpg");
   background-size: cover;
-  width: 200px;
-  height: 180px;
-  border: solid blue;
-  margin-left: 30px;
-  margin-top: 12px;
+  width: 202px;
+  height: 186px;
+  margin-left: 28px;
+  z-index: 1;
+}
+.setA{
+  margin-top: 6px;
 }
 .setB{
-  margin-top:0px;
+  margin-left: 27.5px;
 }
 #actualImages{
-  border: solid red;
+  /* border:solid green; */
   width: 500px;
   height: 400px;
-  position: absolute;
+  position:absolute;
   top:30%;
-  left:32%
+  left: 32.1%;;
+  visibility: hidden;
 }
 #subDiv{
   position: relative;
-  border: solid black;
-  width: 200px;
-  height: 185px;
+  width: 202px;
+  height: 186px;
   left: 30px;
   top: 8px;
-  /* margin-top:10px; */
 }
 #subDiv img{
+  margin-left: 28px;
+  margin-top: 12px;
   position: absolute;
   width: 200px;
-  height: 183px;
+  height: 180px;
   right:0px;
   bottom: 0px;
 }
 #subDiv1{
-  border: solid black;
   position: relative;
-  width: 200px;
-  height: 183px;
-  left: 53%;
-  bottom:94.5%;
+  width: 202px;
+  height: 186px;
+  left: 51%;
+  bottom:91%;
 }
 #subDiv1 img{
+  margin-left: 28px;
+  margin-top: 12px;
     position: absolute;
     width: 200px;
-    height: 183px;
+    height: 180px;
     right:0px;
     bottom: 0px;
-}
-.twoAndfour{
-  margin-top: 6px;
 }
 #optionsBoard{
   width: 600px;
