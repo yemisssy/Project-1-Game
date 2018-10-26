@@ -87,7 +87,7 @@
   }
 }
 #imageHolder{
-  /* border: solid blue; */
+  border: solid red;
   width: 500px;
   height: 400px;
   display: flex;
@@ -95,7 +95,7 @@
   position: relative;
   bottom: 60%;
   left:45px;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
  .images{
   border:solid blue;
@@ -110,49 +110,28 @@
   margin-top: 6px;
 }
 .setB{
-  margin-left: 27.5px;
+  margin-left: 29px;
 }
 #actualImages{
-  /* border:solid green; */
+  border:solid green;
   width: 500px;
   height: 400px;
-  position:absolute;
-  top:30%;
-  left: 32.1%;;
-  visibility: hidden;
-}
-#subDiv{
-  position: relative;
-  width: 202px;
-  height: 186px;
-  left: 30px;
-  top: 8px;
-}
-#subDiv img{
-  margin-left: 28px;
-  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 45px;
   position: absolute;
-  width: 200px;
-  height: 180px;
-  right:0px;
-  bottom: 0px;
+  top:19%;
+  /* visibility: hidden; */
 }
-#subDiv1{
-  position: relative;
-  width: 202px;
-  height: 186px;
-  left: 51%;
-  bottom:91%;
+#actualImages img{
+  width:201px;
+  height: 184px;
+  border: solid black;
+  margin-left: 24.9px;
+  margin-top: 5px;
+
 }
-#subDiv1 img{
-  margin-left: 28px;
-  margin-top: 12px;
-    position: absolute;
-    width: 200px;
-    height: 180px;
-    right:0px;
-    bottom: 0px;
-}
+
 #optionsBoard{
   width: 600px;
   height: 300px;
