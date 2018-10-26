@@ -1,7 +1,7 @@
 console.log('hello');
 const player={
   name:" ",
-  score: 10,
+  score: 0,
   correctAnswers: [],
   wrongAnswers:[]
 }
@@ -39,7 +39,7 @@ let images=Object.values(gameTool.images);//array 4
 let right=Object.values(gameTool.rightOptions);//array 4
 let wrong=Object.values(gameTool.wrongOptions);//array 1
 let inputBtn =document.getElementsByClassName('option');
-
+let scoreCounter=document.getElementById('scoreCounter');
 //Function to run in map
 function createObj(ans){
   let thisObj =
@@ -76,6 +76,7 @@ createObj();
     j -= 1;// reduce here
     s -= 1;
   }
+  // debugger;
   allChoices = allChoices.concat(theRightAns);
   allChoices.sort(()=> 0.5-Math.random());
   let inp=0;
@@ -84,32 +85,43 @@ createObj();
     inputBtn[inp].textContent = allChoices[i].theAns;
     if (allChoices[i].correct) {
       inputBtn[inp].dataset.correct = true;
+      inputBtn[inp].addEventListener('click', checkAnswer);
     }
     else{
-      delete inputBtn[inp].dataset.correct;//Deelet is a keyword
+      delete inputBtn[inp].dataset.correct;//Delete is a keyword
     }
 
     i -=1;
     inp +=1;
   }
-  return allChoices;
-}
-
-//function checkAnswer
-
-function checkAnswer(evt){
-  let playersAns =evt.target;
-  let currentScore =player.score;
-  console.log(currentScore);
-  if(playersAns.dataset.correct === true){
-    let scoreCounter = document.getElementById('scoreCounter');
-    currentScore +=1;
-    scoreCounter.textContent =currentScore;
-  }
 }
 // debugger;
-checkAnswer();
-inputBtn.addEventListener('click', checkAnswer);
+let buttonOpt =document.getElementById('optionsBoard');
+
+//function checkAnswer
+let currentAnswer;
+function checkAnswer(playersClick){
+  let click =playersClick.target;
+  click.style.backgroundColor ='pink';
+  let currentScore = player.score;
+  let totalScore;
+  let playersAns = playersClick.target.getAttribute("data-correct");
+  console.log(playersClick.target.getAttribute("data-correct"));
+  // while(totalScore < targetScore){
+    if(playersAns == "true"){
+      currentScore += 1;
+      console.log(`i am currentScore ${currentScore}`)
+      totalScore = currentScore;
+      scoreCounter.textContent =totalScore;
+      console.log(`i am currentScore ${scoreCounter.textContent}`)
+    }
+    else{
+      currentScore =totalScore;
+    }
+  // }
+  // totalScore = currentScore;
+};
+
 
 //Global
 let currentQuestion;
@@ -140,8 +152,13 @@ function animate(theEvent){
       ansIndex = -1;
     }
 }
-let imageHolder =document.getElementById('imageHolder');
-imageHolder.addEventListener('click', animate);
+//Adding addEventListener to image covers...
+let coverImages =document.getElementsByClassName('images');
+let covers =0;
+while(covers < coverImages.length){
+  coverImages[covers].addEventListener('click', animate);
+  covers +=1;
+}
 
 //modal function
 let modal =document.getElementById('modal');
