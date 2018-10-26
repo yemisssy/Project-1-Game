@@ -80,51 +80,16 @@ function displayAns(){
       s -= 1;
     }
     allChoices = allChoices.concat(save);
-    // allChoices = allChoices.concat(theRightAns);
-    allChoices.sort(()=> 0.5-Math.random());
+    allChoices = allChoices.concat(theRightAns);
     let inp=0;
-    let i=allChoices.length-1;
+    let i=allChoices.sort().length-1;
     while(inp < inputBtn.length){
       inputBtn[inp].textContent = allChoices[i].theAns;
       i -=1;
       inp +=1;
     }
-    return allChoices;
   }
-  //Function choice
-  debugger;
-  function eachChoice(){
-    let displayChoice = displayAns();
-    const choices =
-    [
-      {
-        image: "images/tajMahal.jpg",
-        theChoices :[{theans: "Taj Mahal", correct: true}, {theans: displayChoice, correct: false}]
-      },
-      {
-        image: "images/Colosseum.jpeg",
-        theChoices :[{theans: "Taj Mahal", correct: true}, {theans: displayChoice, correct: false}]
-      },
-      {
-        image: "images/Parthenon.jpg",
-        theChoices :[{theans: "Parthenon", correct: true}, {theans: displayChoice, correct:false }]
-      },
-      {
-        image: "images/eiffelTower.jpg",
-        theChoices :[{theans: "Eiffel Tower", correct: true}, {theans: displayChoice, correct:false }]
-      }
-    ]
-    return choices;
-  };
 
-
-  // if (currentQuestion.choices[i].correct) {
-  //   choiceElements[i].dataset.correct = true
-  // }
-  // choicesElements[i].innerText = currentQuestion.choices[i].answer
-
-//Global
-let currentQuestion;
 
 //function animate deckImg
 function animate(theEvent){
@@ -141,17 +106,11 @@ function animate(theEvent){
       card.style.height= height + 'px';
       }
     }
-    debugger;
-    if(ansIndex === -1){
-      let returnedChoices = eachChoice();
-      ansIndex =  theEvent.target.getAttribute("data-index");
-      console.log(theEvent.target.getAttribute("data-index"));
-      let questionIndex = parseInt(ansIndex);
-      currentQuestion = returnedChoices[questionIndex];
-      console.log(currentQuestion);
+    // if(ansIndex === -1){
+    //   ansIndex =  theEvent.target.getAttribute("value");
       displayAns();
-      ansIndex = -1;
-    }
+    //   ansIndex = -1;
+    // }
 }
 let imageHolder =document.getElementById('imageHolder');
 imageHolder.addEventListener('click', animate);
@@ -179,7 +138,7 @@ function displayPlayer(){
 function addImage(){
   let images1 =document.getElementsByClassName('images1');
   let i=gameTool.images.length-1; //Note to self this returns the value at the last index, index 11, item 12
-  for(let j=images1.length-1; j>=0; j-=1){
+  for(let j=0; j<images1.length; j+=1){
     images1[j].src=gameTool.images[i];
     i-=1;
   }
