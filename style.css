@@ -14,7 +14,6 @@
   border: solid black;
   border-radius: 20px;
   text-align: center;
-  display: none;
   background: pink;
 }
 #submit{
@@ -95,7 +94,7 @@
   position: relative;
   bottom: 60%;
   left:45px;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
  .images{
   border:solid blue;
@@ -120,8 +119,8 @@
   flex-wrap: wrap;
   margin-left: 45px;
   position: absolute;
-  top:19%;
-  /* visibility: hidden; */
+  top:16%;
+  visibility: hidden;
 }
 #actualImages img{
   width:201px;

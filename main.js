@@ -1,7 +1,7 @@
 console.log('hello');
 const player={
   name:" ",
-  score: 0,
+  score: 10,
   correctAnswers: [],
   wrongAnswers:[]
 }
@@ -38,6 +38,7 @@ const gameTool={
 let images=Object.values(gameTool.images);//array 4
 let right=Object.values(gameTool.rightOptions);//array 4
 let wrong=Object.values(gameTool.wrongOptions);//array 1
+let inputBtn =document.getElementsByClassName('option');
 
 //Function to run in map
 function createObj(ans){
@@ -50,78 +51,65 @@ function createObj(ans){
 }
 createObj();
 
-// let cover =document.getElementsByClassName('images');
-// let coverImg =document.getElementsByClassName('images1');
-let inputBtn =document.getElementsByClassName('option');
 
-//function to displayOptions.
-function displayAns(){
-  let theRightAns;
-  let save =[];
-  let allChoices = [];
-  for(let i =0; i <right.length; i +=1){
-    theRightAns =
-    {
-      theAns: right[i],
-      correct: true
-   }
-  }
-     // debugger;
-    let wrongChoices=wrong.map(createObj);
-    let j=wrongChoices.length;
-    let s = 3;
-    while(s > 0){
-      let rad = Math.floor(Math.random() * j);
-      let wrongAPos = wrongChoices[rad];
-      wrongChoices[rad]=wrongChoices[j];
-      wrongChoices[j]=wrongChoices[rad];
-      save.push(wrongAPos);
-      j -= 1;// reduce here
-      s -= 1;
-    }
-    allChoices = allChoices.concat(save);
-    // allChoices = allChoices.concat(theRightAns);
-    allChoices.sort(()=> 0.5-Math.random());
-    let inp=0;
-    let i=allChoices.length-1;
-    while(inp < inputBtn.length){
-      inputBtn[inp].textContent = allChoices[i].theAns;
-      i -=1;
-      inp +=1;
-    }
-    return allChoices;
-  }
-  //Function choice
+
+//function to displayOptions
   debugger;
-  function eachChoice(){
-    let displayChoice = displayAns();
-    const choices =
-    [
-      {
-        image: "images/tajMahal.jpg",
-        theChoices :[{theans: "Taj Mahal", correct: true}, {theans: displayChoice, correct: false}]
-      },
-      {
-        image: "images/Colosseum.jpeg",
-        theChoices :[{theans: "Taj Mahal", correct: true}, {theans: displayChoice, correct: false}]
-      },
-      {
-        image: "images/Parthenon.jpg",
-        theChoices :[{theans: "Parthenon", correct: true}, {theans: displayChoice, correct:false }]
-      },
-      {
-        image: "images/eiffelTower.jpg",
-        theChoices :[{theans: "Eiffel Tower", correct: true}, {theans: displayChoice, correct:false }]
-      }
-    ]
-    return choices;
+
+  function displayAns(image){
+  let index = gameTool.images.indexOf(image);
+
+  let theRightAns = {
+    theAns: gameTool.rightOptions[index],
+    correct: true
   };
+  let allChoices = [];
+  let wrongChoices=wrong.map(createObj);
+  let j=wrongChoices.length;
+  let s = 3;
+  while(s > 0){
+    let rad = Math.floor(Math.random() * j);
+    let wrongAPos = wrongChoices[rad];
+    wrongChoices[rad]=wrongChoices[j];
+    wrongChoices[j]=wrongChoices[rad];
+    allChoices.push(wrongAPos);
+    j -= 1;// reduce here
+    s -= 1;
+  }
+  allChoices = allChoices.concat(theRightAns);
+  allChoices.sort(()=> 0.5-Math.random());
+  let inp=0;
+  let i=allChoices.length-1;
+  while(inp < inputBtn.length){
+    inputBtn[inp].textContent = allChoices[i].theAns;
+    if (allChoices[i].correct) {
+      inputBtn[inp].dataset.correct = true;
+    }
+    else{
+      delete inputBtn[inp].dataset.correct;//Deelet is a keyword
+    }
 
+    i -=1;
+    inp +=1;
+  }
+  return allChoices;
+}
 
-  // if (currentQuestion.choices[i].correct) {
-  //   choiceElements[i].dataset.correct = true
-  // }
-  // choicesElements[i].innerText = currentQuestion.choices[i].answer
+//function checkAnswer
+
+function checkAnswer(evt){
+  let playersAns =evt.target;
+  let currentScore =player.score;
+  console.log(currentScore);
+  if(playersAns.dataset.correct === true){
+    let scoreCounter = document.getElementById('scoreCounter');
+    currentScore +=1;
+    scoreCounter.textContent =currentScore;
+  }
+}
+// debugger;
+checkAnswer();
+inputBtn.addEventListener('click', checkAnswer);
 
 //Global
 let currentQuestion;
@@ -141,15 +129,14 @@ function animate(theEvent){
       card.style.height= height + 'px';
       }
     }
-    debugger;
+    // debugger;
     if(ansIndex === -1){
-      let returnedChoices = eachChoice();
       ansIndex =  theEvent.target.getAttribute("data-index");
       console.log(theEvent.target.getAttribute("data-index"));
       let questionIndex = parseInt(ansIndex);
-      currentQuestion = returnedChoices[questionIndex];
+      currentQuestion = gameTool.images[questionIndex];
       console.log(currentQuestion);
-      displayAns();
+      displayAns(currentQuestion);
       ansIndex = -1;
     }
 }
@@ -200,49 +187,11 @@ function category(){
   let actualImages=document.getElementById('actualImages');
   let finger=document.getElementById('finger');
   let par=document.getElementById('par');
-  // imgHolder.style.visibility='visible';
-  // actualImages.style.visibility='visible';
+  imgHolder.style.visibility='visible';
+  actualImages.style.visibility='visible';
   finger.style.visibility='hidden';
   par.style.visibility='hidden';
 }
 
 let select =document.querySelector('li');
 select.addEventListener('click', category);
-
-
-
-
-// function wrongAns(){
-//   ask();
-//   let wrong = Object.values(gameTool.wrongOptions);//Returns an array of wrong Questions
-//   console.log();
-//   let target = document.getElementsByClassName('option');
-//   let save = [];
-//   let i = wrong.length-1;
-//   // debugger;
-//   while(i >= 0){
-//     let rad = Math.floor(Math.random() * i);
-//     let wrongAPos = wrong[rad];
-//     i -= 1;// reduce here
-//     save.push(wrongAPos);
-//     //swap the current answer with the last answer so it does not repeat it as an option;
-//     let temp= wrongAPos;
-//     wrong[rad]=wrong[i];
-//     wrong[i]=temp;
-//     console.log(save)
-//     // if(save.length === 3){
-//     //   for(let s =0; s <save.length; s+=1){
-//     //     let thisSave =save[s];
-//     //     let j = target.length;
-//     //     while(j > 1) {
-//     //       let theTarget = target[Math.floor(Math.random() * j)];
-//     //       console.log(`i am the current target input ${theTarget}`);
-//     //       theTarget.value = save[s];
-//     //       console.log(`im wrongpos ${wrongAPos}`);
-//     //       j -= 1;
-//     //     }
-//     //   }
-//     // }
-//   }
-// }
-// wrongAns();
