@@ -10,31 +10,28 @@
   </head>
   <script src="main.js" defer charset="utf-8"></script>
   <body id="gameBody">
-    <div id="gamePageHead">
-      <h1>WhoWhereWhat</h1>
-      <img src="images/png1.jpg" alt="border Design">
-    </div>
-    <div class="" id="modal" onload="showModal()">
+      <h1 id="gamePageHead">WhoWhereWhat</h1>
+    <!-- <div class="" id="modal">
       <p>Please Enter your name</p>
       player1<input type="text" name="playersName1" value=" " id="namePut" placeholder="player1"><br>
-      player2<input type="text" name="playersName2" value=" " id="namePut2" placeholder=" player2"><br>
+      player2<input type="text" name="playersName2" value=" " id="namePut2" placeholder="player2"><br>
       <button type="submit" name="button" id="submit">Start Game</button>
-    </div>
+    </div> -->
     <!-- <div class="" id="modal2"></div> -->
     <div id="mainbody">
       <div class="mainChild" id="categories">
         <h2>Categories</h2>
-        <img src="images/underlinedesign.png" alt="">
+        <!-- <img src="images/underlinedesign.png" alt=""> -->
         <ul>
-          <li class="lists" id="landmark"><a href="#">Landmarks and cities</a></li>
+          <li class="lists" id="landmark" onclick="showModal()"><a href="#">Landmarks and cities</a></li>
           <li class="lists" id="famous">Famous People</li>
           <li class="lists" id="quotes">Quotes</li>
         </ul>
       </div>
       <div class="mainChild" id="deckDisplay">
         <div id="imagesBoard">
-          <img src="images/pointing.gif" alt="pointing Finger" id="finger">
-          <p id="par">Please select a category</p>
+          <!-- <img src="images/pointing.gif" alt="pointing Finger" id="finger">
+          <p id="par">Please select a category</p> -->
           <div id="imageHolder">
               <div class="images setA" id="button1" data-index="0">image1</div>
               <div class="images setA" id="button2" data-index="1">image2</div>
@@ -73,23 +70,21 @@
               </div>
           </div>
         </div>
-        <hr>
-        <div id="optionsBoard">
-          <p id="questionTaker">Question<br>Give me designated questions</p>
-          <div class="options">
-            <button type="button" name="optionA" value=" " class="rightHand option" id="a"</button>
-            <button type="button" name="optionA" value=" " class="leftHand option" id="b"</button>
-          </div>
-          <button type="button" name="hint" id="hint">Hint</button>
-          <div class="options">
-            <button type="button" name="optionA" value=" " class="rightHand option" id="c"</button>
-            <button type="button" name="optionA" value=" " class="leftHand option" id="d"</button>
-          </div>
+      </div>
+      <!-- <hr> -->
+      <div id="optionsBoard">
+        <p id="questionTaker">Question<br>Give me designated questions</p>
+        <div class="options">
+          <button type="button" name="optionA" value=" " class="rightHand option" id="a"</button>
+          <button type="button" name="optionA" value=" " class="leftHand option" id="b"</button>
+          <button type="button" name="optionA" value=" " class="rightHand option" id="c"</button>
+          <button type="button" name="optionA" value=" " class="leftHand option" id="d"</button>
         </div>
+        <button type="button" name="hint" id="hint">Hint</button>
       </div>
       <div class="mainChild" id="scoreBoard">
-        <h3>Score~Board</h3>
-        <img src="images/underlinedesign.png" alt="">
+        <h3 id="scoreBoardLabel">Score~Board</h3>
+        <!-- <img src="images/underlinedesign.png" alt=""> -->
         <div id="boardContent">
           <h2 id="thePlayer">Players name</h2>
           <hr>
@@ -97,20 +92,7 @@
           <button type="button" name="button" id="scoreCounter">0</button>
           <h2>Your stats</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </div>
-        <div id="boardContent2">
-          <h2 id="thePlayer2">Players name</h2>
-          <hr>
-          <h1>Score</h1>
-          <button type="button" name="button" id="scoreCounter2">0</button>
-          <h2>Your stats</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-             exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
         </div>
       </div>
     </div>

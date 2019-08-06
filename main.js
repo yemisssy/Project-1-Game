@@ -13,7 +13,7 @@ const player2={
 }
 console.log(player1);
 let ansIndex = -1;
-const gameTool={
+const gameTool = {
   question: "Question: what landmark is this ?",
   images:[
     "images/tajMahal.jpg",
@@ -122,16 +122,16 @@ function createObj(ans){
 //function checkAnswer
 let currentAnswer;
 function checkAnswer(playersClick){
-  let modal22 =document.getElementById('modal2');
-  let click =playersClick.target;
+  let modal22 = document.getElementById('modal2');
+  let click = playersClick.target;
   click.style.backgroundColor = '#99DCFF';
   let playersAns = click.getAttribute("data-correct");
-  let play1= player1.name;
-  let play2 =player2.name;
+  let play1 = player1.name;
+  let play2 = player2.name;
   let ourQuestions = addImage();
   console.log(ourQuestions);
-  let currentScore=0;
-  let targetScore=8;
+  let currentScore = 0;
+  let targetScore = 8;
   debugger;
     if(playersAns == "true"){
       player1.score += 1;
@@ -149,12 +149,12 @@ function checkAnswer(playersClick){
 };
 
 //Function Add Each image to the images1 divs
-let images1 =document.getElementsByClassName('images1');
+let images1 = document.getElementsByClassName('images1');
 function addImage(){
-  let i=gameTool.images.length-1; //Note to self this returns the value at the last index, index 11, item 12
-  for(let j=images1.length-1; j>=0; j-=1){
+  let i = gameTool.images.length - 1; //Note to self this returns the value at the last index, index 11, item 12
+  for(let j = images1.length-1; j >= 0; j-= 1){
     images1[j].src=gameTool.images[i];
-    i-=1;
+    i-= 1;
   }
   return gameTool.images.length;
 }
@@ -208,8 +208,8 @@ function animate(theEvent){
 
 //modal function
 function showModal(){
-  let modal =document.getElementById('modal');
-  window.onload=modal.style.display='block';
+  let modal = document.getElementById('landmark');
+  window.onload = modal.style.display='block';
 }
 
 //Diplay player's name on scoreBoard
@@ -251,8 +251,8 @@ function showModal2(){
 function closeModal2(){
   let modal21= document.getElementById('modal2');
   modal21.style.visibility ='hidden';
-
 }
+
 function playgame(){
   showModal();
   let submit=document.getElementById('submit');

@@ -1,5 +1,135 @@
 
-#enterGame{
+body{
+    border: solid black;
+    margin: 0em;
+    padding: 0em;
+}
+
+#gamePageHead {
+    border: solid red;
+  width: 8em;
+  height: 2em;
+  font-family: 'Srisakdi', cursive;
+  font-size: 40px;
+  text-align: left;
+  margin-top: 0em;
+
+}
+/* scoreBoard Styling */
+#scoreBoard{
+    border: solid red;
+    width: 13em;
+    position: absolute;
+    top: 7em;
+    left: 70em;
+    text-align:center;
+}
+#scoreBoardLabel{
+    text-align: left;
+}
+#boardContent>p{
+    text-align: left;
+}
+#deckDisplay{
+    border: solid blue;
+    width: 50em;
+    height: auto;
+    position: relative;
+    bottom: 0em;
+    left: 18em;
+}
+/* Landmark parent Div Styling */
+.images1{
+    width: 12em;
+    height: 11em;
+    padding: 0.2em;
+    margin-top: 0.1em;
+}
+#actualImages{
+    /* border: solid red; */
+    width: 50em;
+    height: 23.3em;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    left: 0em;
+    justify-content: center;
+}
+
+#imageHolder{
+    border: solid black;
+    position: absolute;
+    width: 50em;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.images{
+    border: solid green;
+    width: 12em;
+    height: 11.1em;
+}
+/* Modal asking players for name */
+#modal{
+    border: solid blue;
+    position:absolute;
+    left: 5em;
+}
+/* Choices styling */
+#optionsBoard{
+    border: solid green;
+    position: relative;
+    bottom: 9em;
+    left: 20.5em;
+    bottom:0em;
+    width: 45em;
+    height: 9em;
+}
+.options{
+    /* border: solid blue; */
+    width: 30em;
+    height: 7em;
+    position:relative;
+    left: 13em;
+    bottom: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+}
+.options>button{
+    width: 15em;
+    margin: 1em;
+}
+#hint{
+    width: 7em;
+    height: 7em;
+    border-radius: 5em;
+    position: absolute;
+    left: 55em;
+    top: 3em;
+}
+/* Categories List styling */
+#categories{
+    border: solid green;
+    position: absolute;
+    height: 25em;
+    width: 13em;
+    left: 3em;
+}
+
+
+/* #gamePageHead h1{
+  color:#ed73bf;
+}
+#gamePageHead img{
+  width: 500px;
+  position: absolute;
+  bottom: 75%;
+  left: 32%;
+} */
+
+
+/* #enterGame{
   width: 100px;
   height: 60px;
   border: solid blue;
@@ -39,51 +169,27 @@
   margin-top: 20px;
   border-radius: 20px;
 }
-#gamePageHead {
-  width: 300px;
-  height: 90px;
-  border: solid black;
-  margin-left: 38.4%;
-  margin-top: 15px;
-  border-radius: 18px;
-  text-align: center;
-  font-family: 'Srisakdi', cursive;
-  font-size: 20px;
-  background-color:#8DCDF3;
-}
+
 /*  colors: #00366F #99DCFF #569AC7 #8DCDF3 #C99983*/
-#gamePageHead h1{
-  color:#ed73bf;
-}
-#gamePageHead img{
-  width: 500px;
-  position: absolute;
-  bottom: 75%;
-  left: 32%;
-}
-#mainbody{
-  border: solid purple;
-  display: flex;
-  margin-top:30px;
-}
-#categories{
+
+/* #categories{
   width: 200px;
   border: solid purple;
-}
-#categories img{
+} */
+/* #categories img{
   width: 210px;
   position: absolute;
   bottom: 67%;
   left: 10px;
-  /* margin-bottom: 50px; */
+  margin-bottom: 50px;
 }
 #categories h2{
   z-index: 1;
   font-size: 30px;
   text-align: center;
   font-family: 'Srisakdi', cursive;
-}
-#categories a{
+}  */
+/* #categories a{
   text-decoration: none;;
 }
 #categories ul{
@@ -94,8 +200,8 @@
   color:#2B5C80;
   font-size: 23px;
   font-family: 'Srisakdi', cursive;
-}
-#deckDisplay{
+} */
+/* #deckDisplay{
   flex:2;
   overflow: hidden;
 }
@@ -105,16 +211,16 @@
   height: 500px;
   border:solid black;
   animation: changeColor 20s infinite;
-}
-#imagesBoard img{
+} */
+/* #imagesBoard img{
   margin-left: 43%;
   margin-top: 25%;
 }
 #par{
   font-size: 25px;
   margin-left: 35%;
-}
-@keyframes changeColor {
+} */
+/* @keyframes changeColor {
   0%{
     background: #f245e4;
   }
@@ -133,8 +239,8 @@
   100%{
     background: #daa520;
   }
-}
-#imageHolder{
+} */
+/* #imageHolder{
   width: 900px;
   height: 500px;
   display: flex;
@@ -144,8 +250,8 @@
   left:20px;
   z-index: 1;
   visibility: hidden;
-}
- .images{
+} */
+ /* .images{
   border:solid #8DCDF3;
   background: url("images/backOfcard.jpg");
   background-size: cover;
@@ -153,8 +259,8 @@
   height: 220px;
   margin-left: 15px;
   border-radius: 7px;
-}
-#actualImages{
+} */
+/* #actualImages{
   width: 900px;
   height: 500px;
   display: flex;
@@ -163,16 +269,16 @@
   top:20%;
   left: 16.9%;
   visibility: hidden;
-}
-#actualImages img{
+} */
+/* #actualImages img{
   width:201px;
   height: 220px;
   border: solid black;
   margin-left: 15px;
   margin-top: 5px;
-}
+} */
 /*#29191C #CAB18E #0D0F24 #8DCDF3 #2B5C80 #807060*/
-#optionsBoard{
+/* #optionsBoard{
   background: #99DCFF;
   font-family: 'Srisakdi', cursive;
   width: 800px;
@@ -180,18 +286,18 @@
   border: solid #2B5C80;
   border-radius: 10px;
   margin-left: 75px;
-}
-#optionsBoard button{
+} */
+/* #optionsBoard button{
   font-family: 'Lobster Two', cursive;
   font-size:25px;
   color:#0D0F24;
   background: #8DCDF3;
   border: solid #2B5C80;
-}
-#hint{
+} */ */
+/* #hint{
   margin-left: 42%;
-  width: 100px;
-  height:100px;
+  width: 100px; */
+  /* height:100px;
   border-radius: 50%;
 }
 #questionTaker{
@@ -211,8 +317,8 @@
   height: 70px;
   border-radius: 20px;
   margin-left:80px;
-}
-#scoreBoard{
+} */
+/* #scoreBoard{
   font-family: 'Srisakdi', cursive;
   width: 250px;
   border:solid purple;
@@ -260,8 +366,8 @@
   height: 400px;
   overflow: scroll;
   border: solid yellow;
-}
-#scoreCounter2{
+} */
+/* #scoreCounter2{
   font-family: 'Srisakdi', cursive;
   margin-left: 50px;
   width: 100px;
@@ -279,4 +385,4 @@
 }
 #boardContent2 p{
   color: #2B5C80;
-}
+} */
