@@ -6,7 +6,7 @@ body{
 }
 
 #gamePageHead {
-    border: solid red;
+  border: solid red;
   width: 8em;
   height: 2em;
   font-family: 'Srisakdi', cursive;
@@ -20,7 +20,7 @@ body{
     border: solid red;
     width: 13em;
     position: absolute;
-    top: 7em;
+    top: 7.2em;
     left: 70em;
     text-align:center;
 }
