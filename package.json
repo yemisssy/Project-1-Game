@@ -1,0 +1,22 @@
+{
+  "name": "project-1-game",
+  "version": "1.0.0",
+  "description": "It's a game played by two players, who selects a category from a list of available categories to guess. taking turns to guess an image they randomly choose from a deck. The images are not shown to them until they click it and they have to guess what, who or where that image is from. They are given four options with a hint and are timed. Once they run out of cards the winner is announced.",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yemisssy/Project-1-Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yemisssy/Project-1-Game/issues"
+  },
+  "homepage": "https://github.com/yemisssy/Project-1-Game#readme"
+}
